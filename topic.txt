@@ -4,3 +4,6 @@ rostopic echo /prometheus/control/ref_pose_rviz
 rostopic echo -b subset_2021-06-06-17-01-04.bag -p /prometheus/control/ref_pose_rviz > drone_ref_pose.txt
 
 rostopic echo -b subset_2021-06-06-17-01-04.bag -p /mavros/local_position/pose > drone_pose.txt
+
+
+rostopic echo -b subset_2021-06-06-17-01-04.bag -p /mavros/local_position/pose > drone_pose.txt
