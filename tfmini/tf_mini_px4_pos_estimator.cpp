@@ -356,6 +356,10 @@ void send_to_fcu()
         vision.pose.orientation.z = q_slam.z();
         vision.pose.orientation.w = q_slam.w();
     }
+    else if (input_source == 9)
+    {
+        vision.pose.position.z = tfmini_hight;//高度来源用tfmini的情况
+    }
 
     vision.header.stamp = ros::Time::now();
     vision_pub.publish(vision);
@@ -369,7 +373,7 @@ void pub_to_nodes(prometheus_msgs::DroneState State_from_fcu)
     // 户外情况，使用相对高度
     if(input_source == 9 )
     {
-        Drone_State.position[2]  = Drone_State.rel_alt;
+        //Drone_State.position[2]  = Drone_State.rel_alt;
     }
     drone_state_pub.publish(Drone_State);
 
